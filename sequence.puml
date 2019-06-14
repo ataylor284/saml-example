@@ -1,0 +1,14 @@
+@startuml
+Browser -> SP: 1. GET /secure
+SP -> Browser: 200 "SAML Login 1" response
+Browser -> IDP: 2. POST "SAML Request" with SAMLRequest payload
+IDP -> Browser: 302 redirect to IDP login
+Browser -> IDP: 3. GET /login
+IDP -> Browser: 200 login page
+Browser -> IDP: 4. POST /login
+IDP -> Browser: 200 "SAML Login 2" response
+Browser -> SP: 5. POST /login/finish with SAMLResponse payload
+SP -> Browser: 302 redirect to /secure
+Browser -> SP: 6. GET /secure
+SP -> Browser: secured content!
+@enduml
