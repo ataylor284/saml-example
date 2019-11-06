@@ -33,7 +33,7 @@
     <dependency>
       <groupId>org.pac4j</groupId>
       <artifactId>pac4j-saml</artifactId>
-      <version>3.7.0</version>
+      <version>3.8.2</version>
     </dependency>
 
     <dependency>
