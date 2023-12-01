@@ -8,6 +8,7 @@ public class SAML2ClientBuilder {
 
     public SAML2Client build() {
         SAML2Configuration config = new SAML2Configuration();
+        config.setServiceProviderEntityId("http://localhost:8080/callback?skúškaaaa");
         config.setIdentityProviderMetadataResourceUrl(getClass().getResource("/idp-metadata.xml").toString());
         config.setSpLogoutRequestBindingType(SAMLConstants.SAML2_REDIRECT_BINDING_URI);
 
